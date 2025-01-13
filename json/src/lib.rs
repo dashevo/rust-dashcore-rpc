@@ -2473,6 +2473,7 @@ pub enum QuorumType {
     LlmqDevnetDip0024 = 105,
     LlmqTestPlatform = 106,
     LlmqDevnetPlatform = 107,
+    LlmqSingleNode = 111,
     UNKNOWN = 0,
 }
 
@@ -2493,6 +2494,7 @@ impl From<u32> for QuorumType {
             105 => QuorumType::LlmqDevnetDip0024,
             106 => QuorumType::LlmqTestPlatform,
             107 => QuorumType::LlmqDevnetPlatform,
+            111 => QuorumType::LlmqSingleNode,
             _ => QuorumType::UNKNOWN,
         }
     }
@@ -2516,6 +2518,7 @@ impl Display for QuorumType {
             QuorumType::UNKNOWN => "unknown",
             QuorumType::LlmqTestPlatform => "llmq_test_platform",
             QuorumType::LlmqDevnetPlatform => "llmq_devnet_platform",
+            QuorumType::LlmqSingleNode => "llmq_1_100",
         };
         write!(f, "{}", value)
     }
@@ -2538,6 +2541,7 @@ impl From<&str> for QuorumType {
             "llmq_devnet_dip0024" => QuorumType::LlmqDevnetDip0024,
             "llmq_test_platform" => QuorumType::LlmqTestPlatform,
             "llmq_devnet_platform" => QuorumType::LlmqDevnetPlatform,
+            "llmq_1_100" => QuorumType::LlmqSingleNode,
             _ => QuorumType::UNKNOWN,
         }
     }
